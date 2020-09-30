@@ -84,7 +84,9 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     	for(int i = 0; i < oldTableSize; i++) {
     		if(oldTable[i] != null) {
     			for(int j = 0; j < oldTable[i].size(); j++) {
-    				
+    				Node currNode = oldTable[i].get(j);
+    				int index = currNode.getKey().hashCode();
+    				hashTable[index].add(currNode);
     			}
     		}
     	}
