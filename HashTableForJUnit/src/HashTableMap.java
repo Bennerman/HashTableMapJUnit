@@ -15,6 +15,11 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     	hashTable = new LinkedList[tableSize];
         
     }
+    /**
+     * create a node and insert it into your hashtable. 
+     * if there's already a node with the key inside the hashtable, return false
+     * if inserted successfully, return true;
+     */
     @Override
     public boolean put(Key key, Value value) {
         if (containsKey(key)) {
@@ -52,10 +57,26 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     	return false;
     }
 
+    
+    /**
+     * if the key is in the hashtable, remove it and return the associated value
+     * if not, return null
+     */
     @Override
     public Value remove(Key key) {
         // TODO Auto-generated method stub
-        return null;
+    	Value desVal = null;
+        if (containsKey(key)) {
+        	int index = hashKey(key)%tableSize;
+        	for (int i = 0; i < size; i++) {
+        		if (hashTable[i].get(i).getKey().equals(key)) {
+        			Value desVal = hashTable[i].get(i).getValue(key);
+        			hashTable[i].remove(i);
+        		}
+        	}
+        	
+        }
+        return desVal;	
     }
 
     @Override
