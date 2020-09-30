@@ -39,7 +39,8 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     @Override
     public boolean containsKey(Key key) {
         // TODO Auto-generated method stub
-        return false;
+        for(int i = size; )
+    	return false;
     }
 
     @Override
@@ -52,6 +53,10 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     public void clear() {
         // TODO Auto-generated method stub
         
+    }
+    
+    public void resize() {
+    	//TODO resize hashtable
     }
     /**
      * Hash the key to an int
