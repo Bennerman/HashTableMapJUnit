@@ -70,7 +70,7 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
         	int index = hashKey(key)%tableSize;
         	for (int i = 0; i < size; i++) {
         		if (hashTable[i].get(i).getKey().equals(key)) {
-        			Value desVal = hashTable[i].get(i).getValue(key);
+        			desVal = hashTable[i].get(i).getValue(key);
         			hashTable[i].remove(i);
         		}
         	}
@@ -82,11 +82,16 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     @Override
     public void clear() {
         // TODO Auto-generated method stub
-        
+        for(int i = 0; i < tableSize; i++) {
+        	if(hashTable[i] != null) {
+        		hashTable[i].clear();
+        	}
+        }
     }
     
     public void resize() {
     	//TODO resize hashtable
+    	
     }
     /**
      * Hash the key to an int
