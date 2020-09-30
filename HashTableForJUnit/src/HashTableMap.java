@@ -77,22 +77,17 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
         	}
         	
         }
-        return desVal;	
+        return desVal;
     }
 
     @Override
     public void clear() {
         // TODO Auto-generated method stub
-        for(int i = 0; i < tableSize; i++) {
-        	if(hashTable[i] != null) {
-        		hashTable[i].clear();
-        	}
-        }
+        
     }
     
     public void resize() {
     	//TODO resize hashtable
-    	
     }
     /**
      * Hash the key to an int
