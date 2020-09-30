@@ -11,7 +11,7 @@ public class Node<Key, Value> {
 		return this.key;
 	}
 	
-	public Value getValue(Key key) {
+	public Value getValue() {
 		return this.value;
 	}
 }
