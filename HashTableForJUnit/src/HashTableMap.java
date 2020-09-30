@@ -4,11 +4,15 @@ import skdjf;
 
 public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     
-    LinkedList<Node<Key, Value>> hashTable;
+	private int size;
+	private int tableSize;
+    private LinkedList<Node<Key, Value>>[] hashTable;
     
     
-    public HashTableMap(int capacity) {
-        
+    public HashTableMap() {
+    	tableSize = 10;
+        size = 0;
+    	hashTable = new LinkedList[tableSize];
         
     }
     @Override
