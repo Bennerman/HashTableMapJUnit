@@ -18,8 +18,11 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     @Override
     public boolean put(Key key, Value value) {
         // TODO Auto-generated method stub
+        int hashedKey = hashKey(key);
+        int index = hashedKey % tableSize;
         
-        
+        Node<Key, Value> node = new Node<Key, Value>(key, value);
+        hashTable[index].add(node);
         
         return false;
     }
