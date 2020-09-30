@@ -9,6 +9,8 @@ class TestCases {
 	@Test
 	void test() {
 		HashTableMapTesting test = new HashTableMapTesting();
+		Node node = new Node("Ben", "Radosevich");
+				
 	}
 
 }
