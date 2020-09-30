@@ -17,14 +17,20 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     }
     @Override
     public boolean put(Key key, Value value) {
-        // TODO Auto-generated method stub
+        if (containsKey(key)) {
+        	return false;
+        }
         int hashedKey = hashKey(key);
         int index = hashedKey % tableSize;
         
         Node<Key, Value> node = new Node<Key, Value>(key, value);
         hashTable[index].add(node);
-        
-        return false;
+        size++;
+       
+        if (size/tableSize >= 0.8) {
+        	resize();
+        }
+        return true;
     }
 
     @Override
@@ -36,7 +42,7 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     @Override
     public int size() {
         // TODO Auto-generated method stub
-        return 0;
+        return size;
     }
 
     @Override
