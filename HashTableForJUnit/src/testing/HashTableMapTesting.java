@@ -1,3 +1,5 @@
+package testing;
+
 import java.util.NoSuchElementException;
 import java.util.LinkedList;
 
@@ -44,7 +46,7 @@ public class HashTableMapTesting<Key, Value > implements HashMapADT<Key, Value>{
 			int index = hashedKey%tableSize;
 			for (int i = 0; i < hashTable[index].size(); i++) {
 				if (hashTable[index].get(i).getKey().equals(key))
-					return hashTable[index].get(i).getValue(key);
+					return hashTable[index].get(i).getValue();
 			}
 		}
 		throw new NoSuchElementException("Key isn't in hashtable");
@@ -79,7 +81,7 @@ public class HashTableMapTesting<Key, Value > implements HashMapADT<Key, Value>{
 			int index = hashKey(key)%tableSize;
 			for (int i = 0; i < size; i++) {
 				if (hashTable[i].get(i).getKey().equals(key)) {
-					desVal = hashTable[i].get(i).getValue(key);
+					desVal = hashTable[i].get(i).getValue();
 					hashTable[i].remove(i);
 				}
 			}
