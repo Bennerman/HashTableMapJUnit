@@ -53,7 +53,8 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     @Override
     public boolean containsKey(Key key) {
         // TODO Auto-generated method stub
-        for(int i = size; )
+        int index = hashKey(key);
+    	for(int i = size; i <  )
     	return false;
     }
 
