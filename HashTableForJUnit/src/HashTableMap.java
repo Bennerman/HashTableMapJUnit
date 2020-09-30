@@ -13,6 +13,10 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     	tableSize = 10;
         size = 0;
     	hashTable = new LinkedList[tableSize];
+    	
+    	for(int i = 0; i < tableSize; i++ ) {
+    		hashTable[i] = new LinkedList<Node<Key, Value>>();
+    	}
         
     }
     @Override
@@ -39,8 +43,14 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     @Override
     public boolean containsKey(Key key) {
         // TODO Auto-generated method stub
-        for(int i = size; )
-    	return false;
+        int index = hashKey(key);
+        
+        for(int i = 0; i < hashTable[index].size(); i++) {
+        	if(hashTable[index].get(i).getKey().equals(key)) {
+        		return true;
+        	}
+        }
+       return false;
     }
 
     @Override
