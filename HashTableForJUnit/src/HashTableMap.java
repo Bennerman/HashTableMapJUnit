@@ -66,7 +66,20 @@ public class HashTableMap<Key, Value > implements HashMapADT<Key, Value>{
     }
     
     public void resize() {
-    	//TODO resize hashtable
+    	
+    	LinkedList<Node<Key,Value>>[] oldTable = hashTable;
+    	int oldTableSize = tableSize;
+    	tableSize *= 2;
+    	hashTable = new LinkedList[tableSize];
+    	
+    	for(int i = 0; i < oldTableSize; i++) {
+    		if(oldTable[i] != null) {
+    			for(int j = 0; j < oldTable[i].size(); j++) {
+    				
+    			}
+    		}
+    	}
+    	
     }
     /**
      * Hash the key to an int
